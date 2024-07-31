@@ -1,0 +1,139 @@
+/* Kalender Page CSS */
+
+.page-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  min-height: 100vh;
+  background: linear-gradient(to right, #ffecd2, #fcb69f);
+  font-family: "Arial", sans-serif;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 600px;
+  margin: 20px 0;
+  color: #333;
+  text-align: center;
+}
+
+.header h1 {
+  margin: 0;
+  font-size: 2.5rem;
+  color: #fff;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.add-event-button {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.add-event-button:hover {
+  background-color: #0056b3;
+}
+
+.calendar-container {
+  width: 100%;
+  max-width: 600px;
+  background: white;
+  padding: 20px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+.styled-calendar {
+  width: 100%;
+}
+
+.styled-calendar .react-calendar__tile {
+  max-width: 100%;
+  text-align: center;
+  padding: 10px 0;
+  font-size: 1rem;
+  border: 1px solid transparent;
+  transition: background 0.3s, border 0.3s;
+}
+
+.styled-calendar .react-calendar__tile--active {
+  background: #007bff;
+  color: white;
+  border-radius: 8px;
+}
+
+
+.footer-calendar {
+  margin-top: auto;
+  padding: 20px 0;
+  text-align: center;
+  width: 100%;
+  background: #007bff;
+  color: white;
+  font-size: 0.9rem;
+  box-shadow: 0 -5px 10px rgba(0, 0, 0, 0.1);
+}
+
+.footer-calendar p {
+  margin: 0;
+}
+
+.event {
+  background-color: #ff6b6b;
+  color: white;
+  border-radius: 8px;
+  padding: 0.25rem 0.5rem;
+  margin: 2px 0;
+  font-size: 10px;
+  white-space: nowrap;
+  position: relative;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  -ms-border-radius: 8px;
+  -o-border-radius: 8px;
+}
+
+/* .event::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: -6px;
+  margin-top: -6px;
+  border-width: 6px;
+  border-style: solid;
+  border-color: transparent #ff6b6b transparent transparent;
+} */
+
+/* Responsiveness */
+@media (max-width: 600px) {
+  .header h1 {
+    font-size: 2rem;
+  }
+
+  .calendar-container {
+    padding: 10px;
+  }
+
+  .styled-calendar .react-calendar__tile {
+    font-size: 0.8rem;
+    padding: 8px 0;
+  }
+
+  .footer {
+    font-size: 0.7rem;
+  }
+
+  .event{
+    font-size: 8px;
+    white-space: nowrap;
+  }
+
+}

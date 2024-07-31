@@ -1,0 +1,10 @@
+import express from 'express';
+import accessValidation from '../Middlewares/AccessValidation.js';
+import { deleteTask, editTask, tasksUser } from '../Controllers/TaskController.js';
+import { updateTaskStatus } from '../Controllers/TaskController.js';
+import { validateTask } from '../Middlewares/TaskMiddleware.js';
+export const taskUserRouter = express.Router();
+taskUserRouter.get('/', accessValidation, tasksUser);
+taskUserRouter.patch('/:task_id', accessValidation, updateTaskStatus);
+taskUserRouter.delete('/:task_id', accessValidation, deleteTask);
+taskUserRouter.put('/:task_id' , accessValidation, validateTask ,editTask);

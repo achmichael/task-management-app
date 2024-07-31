@@ -1,0 +1,464 @@
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  /* background-color: #f4f7fc; */
+  color: #333;
+}
+
+body.light {
+  background-color: #f4f7fc;
+  color: #333;
+}
+
+body.dark {
+  background-color: #2c3e50;
+  color: black;
+}
+
+body.light .navbar {
+  background-color: #ffffff;
+}
+
+body.dark .navbar{
+  background-color: #2c3e50;
+  color: white;
+}
+
+body.dark .navbar .toggle-kanan{
+  color: white;
+}
+
+body.light .navbar .toggle-kiri{
+  color: rgb(8, 8, 8);
+}
+
+body.dark .sidebar, body.dark .sidebar li a{
+  background-color: white;
+  box-shadow: 2px 1px 2px rgba(0, 0, 0, 0.05);
+  color: black;
+}
+body.dark .sidebar li a:hover {
+  background-color: #34495e;
+  color: white;
+}
+.App {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.content {
+  flex: 1;
+}
+
+.content .navbar {
+  background-color: #ffffff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 1rem;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.navbar-title{
+  margin-left: 1.5rem;
+}
+
+.dashboard-container {
+  display: flex;
+  margin: 20px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+}
+
+.sidebar {
+  width: 13vw;
+  background-color: #2c3e50;
+  color: #ecf0f1;
+  padding: 20px 0;
+  height: 100rem;
+  position: sticky;
+  top: 0;
+  transition: all 0.3s ease;
+}
+
+.sidebar ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.sidebar li {
+  margin-bottom: 10px;
+}
+
+.sidebar li a {
+  color: #ecf0f1;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  padding: 10px 20px;
+  transition: background-color 0.3s;
+  -webkit-transition: background-color 0.3s;
+  -moz-transition: background-color 0.3s;
+  -ms-transition: background-color 0.3s;
+  -o-transition: background-color 0.3s;
+}
+
+.sidebar li a:hover {
+  cursor: pointer;
+  background-color: #34495e;
+}
+
+.sidebar li a i {
+  margin-right: 10px;
+}
+
+.main-content {
+  flex-grow: 1;
+  padding: 30px;
+  overflow-y: auto;
+}
+
+.dashboard-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+  flex-wrap: wrap;
+}
+
+.dashboard-header h1 {
+  font-size: 24px;
+  color: #2c3e50;
+  margin: 10px 0;
+}
+
+.notifications {
+  position: relative;
+}
+
+.notification-count {
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  background-color: #e74c3c;
+  color: white;
+  border-radius: 50%;
+  padding: 2px 6px;
+  font-size: 12px;
+}
+.action{
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.action input[type="text"]{
+  flex-grow: 1;
+  padding: 0.5em 1em;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  outline: none;
+  transition: border-color 0.3s ease;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  -webkit-transition: border-color 0.3s ease;
+  -moz-transition: border-color 0.3s ease;
+  -ms-transition: border-color 0.3s ease;
+  -o-transition: border-color 0.3s ease;
+}
+
+.action input[type="text"]:focus {
+  border-color: #007bff;
+}
+
+.action button{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem;
+  margin-left: 10px;
+  border: none;
+  color: white;
+  background-color:  #007bff;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  -webkit-transition: background-color 0.3s ease;
+  -moz-transition: background-color 0.3s ease;
+  -ms-transition: background-color 0.3s ease;
+  -o-transition: background-color 0.3s ease;
+}
+
+.action button:hover{
+  background-color: #0056b3;
+}
+
+.action button .search-icon, .action button .add-icon{
+  width: 20px;
+  height: 20px;
+}
+/* Melakukan Blur pada semua elemen pada kelas App.blur-background kecuali kelas modal-overlay */
+.App.blur-background > *:not(.modal-overlay) {
+  filter: blur(5px);
+}
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5); /* Background semi-transparent */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-container {
+  background-color: #ffffff;
+  color: #333;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  max-width: 500px;
+  width: 100%;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+}
+
+.modal-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.input-field {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+.button-group {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.button-primary {
+  cursor: pointer;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+}
+
+.button-secondary {
+  cursor: pointer;
+  background-color: #6c757d;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+}
+.table-responsive {
+  margin: 20px 0;
+  overflow-x: auto;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #ffffff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.table th, .table td {
+  padding: 1px;
+  text-align: center;
+  border-bottom: 1px solid #ecf0f1;
+}
+.table td {
+  text-align: left;
+}
+.table thead {
+  background-color: #3498db;
+  color: white;
+}
+
+.fixed-width-table th.col-no,
+.fixed-width-table td.col-no {
+  width: 5%;
+}
+
+::-webkit-scrollbar{
+  display: none;
+}
+
+.fixed-width-table th.col-title,
+.fixed-width-table td.col-title {
+  width: 20%;
+}
+
+.fixed-width-table th.col-description,
+.fixed-width-table td.col-description {
+  width: 35%;
+}
+
+.fixed-width-table th.col-status,
+.fixed-width-table td.col-status {
+  width: 10%;
+}
+
+.fixed-width-table th.col-deadline,
+.fixed-width-table td.col-deadline {
+  width: 20%;
+  white-space: nowrap;
+}
+
+.fixed-width-table th.col-action,
+.fixed-width-table td.col-action {
+  width: 10%;
+}
+
+.btn-group{
+  gap: 10px;
+}
+
+.footer {
+  background-color: #2c3e50;
+  color: #ecf0f1;
+  padding: 30px 0;
+  margin-top: auto;
+}
+
+.footer-sections {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.footer-section {
+  flex: 1;
+  margin: 0 15px 20px;
+  min-width: 200px;
+}
+
+.footer-section h3 {
+  color: #3498db;
+}
+
+.footer-section .list-item-footer a{
+  color: #ffffff;
+}
+.social-links a {
+  color: #ecf0f1;
+  margin-right: 10px;
+  font-size: 20px;
+}
+
+.footer-bottom {
+  margin-top: 20px;
+  text-align: center;
+  padding-top: 20px;
+  border-top: 1px solid #34495e;
+}
+
+/* Responsive Styles */
+@media screen and (max-width: 1024px) {
+  .dashboard-container {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+    height: auto;
+    position: static;
+  }
+
+  .main-content {
+    padding: 20px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .dashboard-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .action button .search-icon, .action button .add-icon{
+    width: 15px;
+    height: 15px;
+  }
+
+  
+  .notifications {
+    margin-top: 10px;
+  }
+
+  .footer-section {
+    flex-basis: calc(50% - 30px);
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .dashboard-container {
+    margin: 10px;
+  }
+  .action button{
+    padding: 0;
+  }
+  
+  .action button .search-icon{
+    width: 12px;
+    height: 12px;
+  }
+  .main-content {
+    padding: 15px;
+  }
+
+  .footer-section {
+    flex-basis: 100%;
+  }
+}
+
+
+@media screen and (max-width: 1024px) {
+
+  .sidebar {
+    display: none;
+  }
+
+  .sidebar.active {
+    display: block;
+  }
+}

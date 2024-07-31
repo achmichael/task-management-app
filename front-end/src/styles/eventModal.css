@@ -1,0 +1,61 @@
+.modal-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-container {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  width: 300px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.modal-container h2 {
+  margin-top: 0;
+}
+
+.modal-container form {
+  display: flex;
+  flex-direction: column;
+}
+
+.modal-container label {
+  margin-bottom: 10px;
+}
+
+.modal-container input,
+.modal-container textarea {
+  margin-top: 5px;
+  margin-bottom: 15px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 100%;
+}
+
+.modal-container button {
+  margin-top: 10px;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.modal-container button[type="submit"] {
+  background: #4caf50;
+  color: white;
+}
+
+.modal-container button[type="button"] {
+  background: #f44336;
+  color: white;
+  margin-top: 5px;
+}

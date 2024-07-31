@@ -1,0 +1,217 @@
+/* General Styles */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  color: #333;
+}
+
+/* Hero Section */
+.hero {
+  background-color: transparent;
+  padding: 3rem 1rem;
+  text-align: center;
+}
+
+.section{
+  margin: 2rem 1rem 2rem 1rem;
+  padding: 1rem 2rem;
+  display: flex;
+}
+
+.first-section{
+  flex: 1 1 35rem;
+}
+
+.get-started{
+  margin-top: 1rem;
+  padding: 0.3rem 1rem;
+  background-color: transparent;
+}
+.get-started button{
+  border-radius: 8px;
+  border: none;
+  font-size: 1rem;
+  font-weight: 500;
+  background-color: #0056b3;
+  color: white;
+  padding: 1rem;
+  cursor: pointer;
+}
+.get-started button:hover{
+  color: black;
+  background-color: transparent;
+}
+.hero h2 {
+  font-size: 2.5rem;
+  text-overflow: ellipsis;
+}
+
+.hero p {
+  font-size: 1.5rem;
+  color: black;
+}
+
+/* Features Section */
+.features {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding: 2rem 1rem;
+  margin-bottom: 2rem;
+}
+
+.feature {
+  width: 30%;
+  padding: 1rem;
+  margin: 0.5rem 0;
+  border: 1px solid #dee2e6;
+  border-radius: 5px;
+  background-color: #fff;
+  box-shadow: 5px 4px 3px rgba(16, 119, 245, 0.5);
+}
+
+.feature h3 {
+  font-size: 1.25rem;
+  margin: 1rem 0;
+}
+
+
+.running-text {
+  margin-top: 3rem;
+  color: #333;
+  font-size: 1.1rem;
+  text-align: center;
+}
+
+
+/* Footer Section */
+.footer {
+  background-color: #333;
+  color: white;
+  padding: 2rem;
+  text-align: center;
+}
+
+.footer a {
+  color: white;
+  text-decoration: none;
+  margin: 0 0.5rem;
+}
+
+.footer a:hover {
+  text-decoration: underline;
+}
+
+.footer .social-links {
+  margin-top: 1rem;
+}
+
+.footer .social-links a {
+  margin: 0 0.5rem;
+}
+
+.footer .social-links i {
+  font-size: 1.5rem;
+}
+
+/* Responsive Styles */
+@media (max-width: 991px) {
+
+  html{
+    font-size: 75%;
+  }
+  .hero h1 {
+    font-size: 2rem;
+  }
+
+  .hero p {
+    font-size: 1.25rem;
+  }
+
+  .feature {
+    width: 45%;
+  }
+}
+
+@media (max-width: 768px) {
+  html{
+    font-size: 55%;
+  }
+  .hero h1 {
+    font-size: 2rem;
+  }
+  .hero p {
+    font-size: 1rem;
+  }
+
+  .section{
+    flex-direction: column;
+  }
+
+  .first-section{
+    flex: 1;
+    margin-bottom: 2rem;
+  }
+  .hero{
+    margin-top: 1rem;
+  }
+  .features{
+    gap: 2vmin;
+  }
+  .feature {
+    width: 70%;
+    text-align: center;
+  }
+
+  .cta button {
+    width: 100%;
+    max-width: 300px;
+    margin-bottom: 1rem;
+  }
+}
+
+@media (max-width: 576px) {
+  html{
+    font-size: 45%;
+  }
+  .hero {
+    padding: 2rem 1rem;
+  }
+
+  .hero h1 {
+    font-size: 1.5rem;
+  }
+
+  .hero p {
+    font-size: 1rem;
+  }
+
+  .cta button {
+    font-size: 0.875rem;
+    padding: 0.75rem 1.5rem;
+  }
+
+  .footer .social-links i {
+    font-size: 1.25rem;
+  }
+}
+
+@media (max-width: 400px) {
+  .hero h1 {
+    font-size: 1.25rem;
+  }
+
+  .hero p {
+    font-size: 0.875rem;
+  }
+
+  .cta button {
+    font-size: 0.75rem;
+    padding: 0.5rem 1rem;
+  }
+
+  .footer .social-links i {
+    font-size: 1rem;
+  }
+}
