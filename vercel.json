@@ -1,15 +1,35 @@
 {
-    "version": 2,
-    "builds" : [
+  "version": 2,
+  "builds": [
+    {
+      "src": "./back-end/src/index.js",
+      "use": "@vercel/node"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "./back-end/src/index.js"
+    }
+  ],
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        { "key": "Access-Control-Allow-Credentials", "value": "true" },
         {
-            "src": "back-end/src/index.js",
-            "use": "@vercel/node"
-        }
-    ],
-    "routes": [
+          "key": "Access-Control-Allow-Origin",
+          "value": "*"
+        },
         {
-            "src": "/(.*)",
-            "dest": "back-end/src/index.js"
+          "key": "Access-Control-Allow-Methods",
+          "value": "GET, POST, PUT, DELETE, OPTIONS"
+        },
+        {
+          "key": "Access-Control-Allow-Headers",
+          "value": "X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version"
         }
-    ]
-} 
+      ]
+    }
+  ]
+}
